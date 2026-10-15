@@ -1,0 +1,6 @@
+{
+  "name": "Active NGO Directory",
+  "description": "A clean directory of verified active Indian NGOs to search, filter by cause or state/region, and apply or volunteer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

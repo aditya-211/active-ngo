@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "DM Serif Display", "Iowan Old Style", "Times New Roman", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-white: #fbf9f3;
+  --color-indigo-50: #e9eee7;
+  --color-indigo-100: #d8e0d5;
+  --color-indigo-200: #bdcbb8;
+  --color-indigo-300: #a1b294;
+  --color-indigo-400: #879a7c;
+  --color-indigo-500: #788365;
+  --color-indigo-600: #496c57;
+  --color-indigo-700: #244c3b;
+  --color-indigo-800: #1e4032;
+  --color-indigo-900: #193429;
+  --color-indigo-950: #10251d;
+
+  --color-gray-50: #faf8f2;
+  --color-gray-100: #f3efe5;
+  --color-gray-200: #e7e0d2;
+  --color-gray-300: #d6cebd;
+  --color-gray-400: #9a9589;
+  --color-gray-500: #726f65;
+  --color-gray-600: #55574f;
+  --color-gray-700: #41453e;
+  --color-gray-800: #333831;
+  --color-gray-900: #292c27;
+
+  --color-rose-50: #f5e9e3;
+  --color-rose-100: #ecd8cf;
+  --color-rose-500: #b66549;
+  --color-rose-600: #a6553b;
+  --color-rose-700: #914832;
+
+  --color-blue-50: #eef0e9;
+  --color-blue-100: #e1e5d9;
+  --color-blue-700: #59664e;
+
+  --color-emerald-50: #e8ede4;
+  --color-emerald-100: #d8e2d2;
+  --color-emerald-500: #788365;
+  --color-emerald-600: #496c57;
+  --color-emerald-700: #315a43;
+
+  --color-amber-50: #f2eadb;
+  --color-amber-100: #e6d9bd;
+  --color-amber-500: #a17b45;
+  --color-amber-600: #89673a;
+  --color-amber-700: #76582f;
+
+  --color-orange-50: #f3e6d9;
+  --color-orange-100: #e9d2bd;
+  --color-orange-700: #925c3d;
+
+  --color-sky-50: #e5ece9;
+  --color-sky-100: #d2dfda;
+  --color-sky-700: #4d6861;
+
+  --color-neutral-50: #f7f4ec;
+  --color-neutral-100: #eae5d9;
+  --color-neutral-800: #41453e;
+  --color-neutral-900: #244c3b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-y: scroll;
+  background: #f3efe5;
+  color: #292c27;
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+}
+
+.paper-grain {
+  background-color: #f3efe5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.12' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+::selection {
+  background: #d7e0d3;
+  color: #193429;
+}
+
+:focus-visible {
+  outline: 2px solid #788365;
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9c1b1;
+  border: 3px solid #f3efe5;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a69c8a;
+}
+
+.ai-glass {
+  background: rgba(251, 249, 243, 0.9);
+}
+
+.ai-glow-hover:hover {
+  background-color: #f5f2e9;
+}
+
+.hero-editorial {
+  isolation: isolate;
+}
+
+.hero-copy {
+  animation: hero-copy-arrive 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-reveal {
+  animation: hero-copy-arrive 850ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-reveal-1 { animation-delay: 80ms; }
+.hero-reveal-2 { animation-delay: 170ms; }
+.hero-reveal-3 { animation-delay: 280ms; }
+.hero-reveal-4 { animation-delay: 390ms; }
+.hero-reveal-5 { animation-delay: 480ms; }
+
+.hero-headline-accent {
+  text-decoration: underline;
+  text-decoration-color: #b66549;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
+}
+
+.hero-art {
+  perspective: 1000px;
+}
+
+.hero-photo {
+  overflow: hidden;
+  transform-style: preserve-3d;
+  animation: hero-photo-arrive 1100ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 700ms ease;
+}
+
+.hero-photo img {
+  transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 700ms ease;
+}
+
+.hero-photo-main {
+  transform: rotate(-1.5deg);
+  animation-delay: 180ms;
+}
+
+.hero-photo-inset {
+  transform: rotate(2.3deg);
+  animation-delay: 360ms;
+}
+
+.hero-photo-label {
+  animation: hero-label-arrive 900ms 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-orbit {
+  position: absolute;
+  border: 1px solid rgb(120 131 101 / 22%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-orbit-one {
+  inset: 7% 7% 9% 15%;
+  animation: hero-drift 18s ease-in-out infinite alternate;
+}
+
+.hero-orbit-two {
+  inset: 15% 2% 1% 22%;
+  border-color: rgb(182 101 73 / 18%);
+  animation: hero-drift 22s ease-in-out infinite alternate-reverse;
+}
+
+.hero-botanical {
+  animation: hero-drift 15s ease-in-out infinite alternate;
+}
+
+.hero-draw-line {
+  animation: hero-line-draw 1400ms 450ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes hero-copy-arrive {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-photo-arrive {
+  from { opacity: 0; translate: 0 14px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes hero-label-arrive {
+  from { opacity: 0; translate: -8px 0; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes hero-line-draw {
+  from { scale: 0 1; }
+  to { scale: 1 1; }
+}
+
+@keyframes hero-drift {
+  from { translate: 0 -4px; }
+  to { translate: 0 5px; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-photo-main:hover {
+    transform: rotate(0deg) translateY(-3px);
+    box-shadow: 0 24px 54px rgb(41 44 39 / 18%);
+  }
+
+  .hero-photo-inset:hover {
+    transform: rotate(0deg) translateY(-3px);
+    box-shadow: 0 20px 42px rgb(41 44 39 / 20%);
+  }
+
+  .hero-photo:hover img {
+    transform: scale(1.035);
+    filter: saturate(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-copy,
+  .hero-reveal,
+  .hero-photo,
+  .hero-photo-label,
+  .hero-orbit,
+  .hero-botanical,
+  .hero-draw-line {
+    animation: none !important;
+  }
+}
